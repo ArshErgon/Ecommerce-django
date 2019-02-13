@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign Page</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{% static 'signin/css/montserrat-font.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'signin/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'signin/css/style.css' %}"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="{% url 'signin' %}" method="post" id="myform"> {% csrf_token %}
+				<div class="form-left"><br>
+					<center><a href="{% url 'home' %}"><h3>Home</h3></a></center>
+					<h2>General Infomation</h2>
+					
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							{{ sign_form.as_p }}
+						</div>
+					</div>
+				</div>
+				<div class="form-right">
+					<h2>Contact Details</h2>
+					<div class="form-row">
+						{{ sign_detail.as_p }}
+					</div>
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register" value="Register Badge">
+					</div>
+			</form>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+	::selection {
+		color: white;
+		background-color: black;
+	}
+</style>
+</html>

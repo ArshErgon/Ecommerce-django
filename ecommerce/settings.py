@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'ecohome',
+    'products',
 
     'django.contrib.admin',
     'django.contrib.auth',

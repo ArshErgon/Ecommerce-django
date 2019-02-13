@@ -1,0 +1,29 @@
+			
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+			<div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Leave a comment</h3>
+                {% csrf_token %}
+                     <form action="" method="POST" role="form"> {% csrf_token %}
+                     <div class="row">
+                       <div class="col-md-12 mb-3">
+                         <div class="form-group">
+                           <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                           <div class="validation"></div>
+                         </div>
+                       </div>
+                       <div class="col-md-12 mb-3">
+                         <div class="form-group">
+                           <textarea class="form-control" name="comment" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                           <div class="validation"></div>
+                         </div>
+                       </div>
+                       <div class="col-md-12">
+                           <button type="submit" class="btn btn-primary">Send Message</button>
+                       </div>
+                     </div>
+                   </form><br>
+              </div>
+            </div>
+
+          </div>
