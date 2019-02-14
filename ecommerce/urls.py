@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecohome.urls')),
     path('products/', include('products.urls')),
+    path('', include('contact.urls')),
+    path('cart/', include('cart.urls')),
     path('try/', trypage, name='try'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

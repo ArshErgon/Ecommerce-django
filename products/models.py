@@ -2,6 +2,10 @@ from django.db import models
 
 
 class Product(models.Model):
+	GENDER = (
+		('male', 'MALE'),
+		('female', 'FEMALE'),
+		)
 	PRODUCT_TAGES = (
 		("new", "NEW"),
 		('sale', 'SALE'),
@@ -13,6 +17,11 @@ class Product(models.Model):
 		('WATCHES', 'WATCHES'),
 		('BAGS', 'BAGS'),
 		)
+	PRODUCT_COLOR = (
+		('RED','RED'),
+		('BLUE','BLUE'),
+		('GREEN', 'GREEN'),
+		)
 	product_name = models.CharField(max_length=50)
 	product_image = models.ImageField(upload_to='ProImg')
 	product_image_second  = models.ImageField(upload_to='ProImg')
@@ -21,6 +30,8 @@ class Product(models.Model):
 	product_addition_detail = models.TextField(blank=True)
 	product_eye_catcher = models.CharField(max_length=100)
 	product_category = models.CharField(max_length=15, choices=PRODUCT_CATEGORY)
+	product_color_by_user = models.CharField(max_length=10, choices=PRODUCT_COLOR, blank=True)
+	product_gender = models.CharField(max_length=10, choices=GENDER)
 	product_price = models.IntegerField()
 	product_tage = models.CharField(max_length=10, choices=PRODUCT_TAGES, blank=True)
 
