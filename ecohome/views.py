@@ -71,7 +71,9 @@ def signpage(request):
 
 def trypage(request):
 	a = ProductCart.objects.filter(cart_product_buyer='arsh')
-#	print(dir(a))
-	x = Product
-	print(dir(x))
+	if a.exists():
+		x = Product.objects.filter(id=1)
+	else:
+		x = 'A'
+	print(request.path_info)
 	return render(request, 'try.html', {'a':x})

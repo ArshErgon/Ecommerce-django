@@ -33,6 +33,7 @@ class Product(models.Model):
 	product_color_by_user = models.CharField(max_length=10, choices=PRODUCT_COLOR, blank=True)
 	product_gender = models.CharField(max_length=10, choices=GENDER)
 	product_price = models.IntegerField()
+	product_quantity = models.IntegerField( blank=True, default=1)
 	product_tage = models.CharField(max_length=10, choices=PRODUCT_TAGES, blank=True)
 
 

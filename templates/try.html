@@ -1,3 +1,8 @@
 {{ a }}
 
-{{ a.product_name }}
+{% for x in a %}
+
+{{ x.product_name }}<br>
+<img src="{{ x.product_image.url }}" width="30%">
+
+{% endfor %}
