@@ -2,8 +2,21 @@
 from django import forms
 
 class ReviewForm(forms.Form):
-	name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your name'}))
-	user_review = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'make it to the point'}))
+	name = forms.CharField(widget=forms.TextInput(
+												attrs={
+														'class'				:			'form-control',
+														'placeholder'		:			'Your name'
+														}
+												)
+	)
+
+	user_review = forms.CharField(widget=forms.Textarea(
+														attrs={
+																'class'			:		'form-control', 
+																'placeholder'	:		'make it to the point'
+																}
+														)
+	)
 
 	def clean_name(self):
 		name = self.cleaned_data.get('name')

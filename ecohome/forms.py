@@ -5,7 +5,9 @@ class SignInForm(forms.Form):
 	name = forms.CharField(widget=forms.TextInput())
 	email = forms.CharField(widget=forms.EmailInput())
 	password = forms.CharField(widget=forms.PasswordInput())
-	password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
+	password2 = forms.CharField(label='Confirm Password',
+										 widget=forms.PasswordInput()
+										 )
 
 	# I can use style here (class:'form-control') but it make the sign in pag wired AF 
 

@@ -7,14 +7,23 @@ from .forms import SignInForm, SignInDetail, TryForm
 
 from products.forms import ReviewForm
 
+from cart.models import ProductCart
+
+from products.models import Product
+
 from django.contrib.auth import  login, get_user_model
 
 from django.contrib.auth.models import User
 
+
 def ecommerce_home(request):
 	banner_context = BannerProduct.objects.all()
 	home_product_context = HomeProductDisplay.objects.all()
-	return render(request, 'home.html', {'banner_context':banner_context, 'home_product_context':home_product_context})
+	return render(request, 'home.html', {
+										'banner_context'			:			banner_context, 
+										'home_product_context'		:			home_product_context
+										}
+				)
 
 User = get_user_model()
 def signpage(request):
@@ -52,11 +61,17 @@ def signpage(request):
 			login(request, new_sign_form)
 			return redirect('/')
 			
-	return render(request, 'sign.html', {'sign_form':sign_form, 'sign_detail':sign_detail})
+	return render(request, 'sign.html', {
+										'sign_form'			:		sign_form, 
+										'sign_detail'		:		sign_detail
+										}
+				)
 
 
 
 def trypage(request):
-	data = UserDetail.objects.filter(user=request.user)
-	form = ReviewForm(request.POST or None)
-	return render(request, 'try.html', {'data':data, 'form':form})
+	a = ProductCart.objects.filter(cart_product_buyer='arsh')
+#	print(dir(a))
+	x = Product
+	print(dir(x))
+	return render(request, 'try.html', {'a':x})
