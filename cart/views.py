@@ -28,17 +28,13 @@ def product_quantity(request, pk):
 	a = Product.objects.filter(id=pk)
 	#print(dir(a))
 	filter_data = ProductCart.objects.filter(cart_product_buyer=request.user)
-	total_price = x.product_price		
 	if filter_data.exists():
 		for data in filter_data:	# WHY? because the atribute which I want is not present in filter_data but when we use a loop we get it 
 			pass				# It is not the best but figure it out later(EXPERIENCE)
 		show_product = Product.objects.filter(id=data.cart_product_id)
 	else:
 		show_product = ''
-	num_product = request.POST.get("num-product")
-	if num_product == "0":
-		pass
-
+	print(type(request.POST.get("num-product")))
 	for x in a:
 		pass
 	try:
