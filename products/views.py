@@ -1,6 +1,8 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
+
 from .models import Product, ProductReview
+
 from .forms import ReviewForm
 
 def product_display_view(request):

@@ -1,6 +1,8 @@
+
 from django.shortcuts import render, redirect
 
 from .forms import ContactForm
+
 from .models import AboutModel, ContactModel # I can you class meta also but I have never try that
 
 def contact_page(request):
